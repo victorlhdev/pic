@@ -1,7 +1,6 @@
 import { PhotoService } from './photos/photo/photo.service';
 import { Component } from '@angular/core';
 
-
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -10,7 +9,7 @@ import { Component } from '@angular/core';
 
 export class AppComponent {
 
-  photos: Photo[] = [];
+  photos: any[] = [];
 
   constructor(PhotoService: PhotoService){
 
@@ -20,11 +19,6 @@ export class AppComponent {
 
   }
 
-  };
-
-  interface Photo{
-    url: string
-    description: string
   };
 
 
