@@ -1,5 +1,5 @@
 import { PhotoService } from './photos/photo/photo.service';
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-root',
@@ -7,16 +7,17 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css'],
 })
 
-export class AppComponent {
+export class AppComponent implements OnInit{
 
   photos: any[] = [];
 
-  constructor(PhotoService: PhotoService){
+  constructor(private PhotoService: PhotoService){ }
 
-    PhotoService
+  ngOnInit(): void {
+
+    this.PhotoService
       .listFromUser('flavio')
       .subscribe(photos => this.photos = photos)
-
   }
 
   };
